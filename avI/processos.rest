@@ -1,0 +1,48 @@
+### GET
+GET http://localhost:8080/processos
+
+### GET
+GET http://localhost:8080/processos/1234
+
+### POST
+POST http://localhost:8080/processos
+Content-Type: application/json
+
+{
+    "descricao": "Processo Juridico",
+    "autor": "Diego",
+    "local": "Contagem MG",
+    "dataDePublicacao": "2021-09-01",
+    "status": "1"
+}
+
+### GET
+GET http://localhost:8080/processos/614912fdd6f4a17e614d5fa5
+
+
+### PUT
+PUT http://localhost:8080/processos/615babb06e54196e311d547f
+Content-Type: application/json
+
+{
+    "descricao": "Processo Juridico",
+    "autor": "Daniel",
+    "local": "Belo Horizonte MG",
+    "dataDePublicacao": "2011-09-01",
+    "status": "2"
+}
+
+### PUT - NOT FOUND
+PUT http://localhost:8080/processos/615bb5801809971abda5d613
+Content-Type: application/json
+
+{
+    "descricao": "Processo Juridico",
+    "autor": "Alan",
+    "local": "Betim MG",
+    "dataDePublicacao": "2018-09-01",
+    "status": "3"
+}
+
+### DELETE
+DELETE http://localhost:8080/processos/615bb5821809971abda5d614

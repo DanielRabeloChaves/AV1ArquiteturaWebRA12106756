@@ -1,10 +1,10 @@
-package com.newton.prova.avI;
+package com.newton.prova.av;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProvaAvIApplicationTests {
+class ProvaAvApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.newton.prova.av.api.ProcessoDto;
+import com.newton.prova.av.domain.entity.Processo;
+import com.newton.prova.av.service.ProcessoService;
 
 
 @RestController
@@ -26,7 +29,7 @@ public class ProcessoController {
 	
 	@GetMapping("/processo/{id}")
 	public ProcessoDto getById(@PathVariable String id) {
-		var processo = ProcessoService.get(id);
+		var processo = processoService.get(id);
 		
 		return new ProcessoDto(processo);
 	}
@@ -35,13 +38,13 @@ public class ProcessoController {
 	public List<ProcessoDto> getAll() {
 		var processos = processoService.getAll();
 		
-		var processoDto = new ArrayList<ProcessoDto>();
+		var processoDtos = new ArrayList<ProcessoDto>();
 		
 		for (var processo: processos) {
-			processosDto.add(new ProcessoDto(processo));
+			processoDtos.add(new ProcessoDto(processo));
 		}
 		
-		return processosDto;
+		return processoDtos;
 	}
 	
 	@PostMapping("/processos")
